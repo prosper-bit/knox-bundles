@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Initialize Telegram WebApp ---
+    try {
+        if (window.Telegram && window.Telegram.WebApp) {
+            window.Telegram.WebApp.ready();
+            window.Telegram.WebApp.expand();
+            console.log("Telegram WebApp SDK is ready.");
+        } else {
+            console.error("Telegram WebApp SDK not found.");
+        }
+    } catch (error) {
+        console.error('Error initializing Telegram WebApp:', error);
+    }
+
     const welcomeScreen = document.getElementById('welcome-screen');
     const networkSelectionScreen = document.getElementById('network-selection-screen');
     const bundleSelectionScreen = document.getElementById('bundle-selection-screen');
@@ -80,31 +93,30 @@ document.addEventListener('DOMContentLoaded', () => {
             const orderData = {
                 name: name,
                 contact: contact,
+                network: selectedNetwork,
                 bundle: selectedBundle.name,
                 price: selectedBundle.price
             };
 
             // --- Telegram WebApp Integration ---
             try {
-                window.Telegram.WebApp.sendData(JSON.stringify(orderData));
-                showScreen(confirmationScreen);
+                if (window.Telegram && window.Telegram.WebApp) {
+                    window.Telegram.WebApp.sendData(JSON.stringify(orderData));
+                    // The confirmation screen will only be shown if sendData is successful.
+                    // In a real scenario, you might wait for a response from the bot.
+                    showScreen(confirmationScreen);
+                } else {
+                    console.error("Telegram WebApp SDK is not available. Cannot send data.");
+                    alert('Order submitted (for testing outside Telegram)!');
+                    showScreen(confirmationScreen);
+                }
             } catch (error) {
                 console.error('Error sending data to Telegram:', error);
-                // Fallback for testing outside Telegram
-                alert('Order submitted (for testing)!' + JSON.stringify(orderData));
-                showScreen(confirmationScreen);
+                alert('An error occurred while submitting your order.');
             }
 
         } else {
             alert('Please fill in all fields.');
         }
     });
-
-    // --- Initialize Telegram WebApp ---
-    try {
-        window.Telegram.WebApp.ready();
-        window.Telegram.WebApp.expand();
-    } catch (error) {
-        console.error('Telegram WebApp SDK not available.');
-    }
 });
