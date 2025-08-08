@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knox Bundles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="welcome-screen">
+        <div class="logo-container">
+            <div class="logo-circle">
+                <span class="logo-k">K</span>
+            </div>
+            <h1>Knox Bundles</h1>
+        </div>
+    </div>
+
+    <div id="bundle-selection-screen" style="display: none;">
+        <h2>Select a Bundle</h2>
+        <div id="bundle-cards"></div>
+    </div>
+
+    <div id="order-form-screen" style="display: none;">
+        <h2>Order Form</h2>
+        <form id="order-form">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="contact" placeholder="Telegram/WhatsApp Contact" required>
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+
+    <div id="confirmation-screen" style="display: none;">
+        <h2>Order Received!</h2>
+        <p>Thank you for your purchase. Please follow the payment instructions sent to you via Telegram.</p>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

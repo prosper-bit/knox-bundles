@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Basic Bundle",
+        "description": "Ideal for light users and basic browsing.",
+        "price": "$5"
+    },
+    {
+        "id": 2,
+        "name": "Standard Bundle",
+        "description": "Perfect for regular streaming and social media.",
+        "price": "$10"
+    },
+    {
+        "id": 3,
+        "name": "Premium Bundle",
+        "description": "Unlimited data for heavy users and HD streaming.",
+        "price": "$20"
+    }
+]
