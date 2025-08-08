@@ -1,20 +1,62 @@
-[
-    {
-        "id": 1,
-        "name": "Basic Bundle",
-        "description": "Ideal for light users and basic browsing.",
-        "price": "$5"
-    },
-    {
-        "id": 2,
-        "name": "Standard Bundle",
-        "description": "Perfect for regular streaming and social media.",
-        "price": "$10"
-    },
-    {
-        "id": 3,
-        "name": "Premium Bundle",
-        "description": "Unlimited data for heavy users and HD streaming.",
-        "price": "$20"
-    }
-]
+{
+    "MTN": [
+        {
+            "id": 1,
+            "name": "MTN Basic",
+            "description": "Ideal for light users and basic browsing.",
+            "price": "$5"
+        },
+        {
+            "id": 2,
+            "name": "MTN Standard",
+            "description": "Perfect for regular streaming and social media.",
+            "price": "$10"
+        },
+        {
+            "id": 3,
+            "name": "MTN Premium",
+            "description": "Unlimited data for heavy users and HD streaming.",
+            "price": "$20"
+        }
+    ],
+    "TELECEL": [
+        {
+            "id": 4,
+            "name": "Telecel Starter",
+            "description": "Great for staying connected on a budget.",
+            "price": "$4"
+        },
+        {
+            "id": 5,
+            "name": "Telecel Plus",
+            "description": "More data for your daily needs.",
+            "price": "$8"
+        },
+        {
+            "id": 6,
+            "name": "Telecel Max",
+            "description": "The ultimate data package for Telecel users.",
+            "price": "$15"
+        }
+    ],
+    "AirtelTigo": [
+        {
+            "id": 7,
+            "name": "AirtelTigo Lite",
+            "description": "Affordable data for your smartphone.",
+            "price": "$3"
+        },
+        {
+            "id": 8,
+            "name": "AirtelTigo Social",
+            "description": "Stay active on social media all month long.",
+            "price": "$7"
+        },
+        {
+            "id": 9,
+            "name": "AirtelTigo Pro",
+            "description": "Everything you need for work and play.",
+            "price": "$12"
+        }
+    ]
+}
